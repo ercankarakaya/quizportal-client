@@ -2,7 +2,56 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img src="../assets/img/signup_logo.png" alt="" class="signup-img" />
+                </div>
                 <h3 class="text-center">Register Here</h3>
+
+                <form>
+
+                    <!-- username field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!-- password field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!-- first name field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!-- last name field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!-- email field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!-- phone number field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="number" matInput placeholder="Enter here">
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button mat-raised-button color="primary" class="btn">Register</button>
+                        <button mat-raised-button color="accent" class="btn">Clear</button>
+                    </div>
+
+                </form>
+
             </div>
         </div>
     </div>

@@ -10,4 +10,14 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.text-center {}
+.text-center {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
