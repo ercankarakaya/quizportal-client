@@ -8,24 +8,39 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms'
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, SignupComponent, LoginComponent], // comnponents are added here.
+  // comnponents are added here.
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    SignupComponent,
+    LoginComponent,
+  ],
 
-  imports: [ // modules are added here.
-    BrowserModule, 
-    AppRoutingModule, 
+  // modules are added here.
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    MatIconModule,
+    BrowserModule,
+    ReactiveFormsModule
   ],
-  providers: [], 
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
