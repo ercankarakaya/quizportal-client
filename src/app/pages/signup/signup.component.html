@@ -15,7 +15,7 @@
                             <!-- first name field -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>First Name</mat-label>
-                                <input matInput formControlName="firstName" placeholder="Enter here">
+                                <input matInput formControlName="firstName" placeholder="Enter here" required>
                                 <mat-error *ngIf="registerForm.get('firstName').hasError('required')">Firstname is required</mat-error>
                             </mat-form-field>
                         </div>
@@ -23,7 +23,7 @@
                             <!-- last name field -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Last Name</mat-label>
-                                <input matInput formControlName="lastName" placeholder="Enter here">
+                                <input matInput formControlName="lastName" placeholder="Enter here" required>
                                 <mat-error *ngIf="registerForm.get('lastName').hasError('required')">Lastname is required</mat-error>
                             </mat-form-field>
                         </div>
@@ -32,7 +32,8 @@
                     <!-- email field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input formControlName="email" type="email" matInput placeholder="Enter here">
+                        <input formControlName="email" type="email" matInput placeholder="Enter here" required>
+                        <mat-hint>Email must be unique</mat-hint>
                         <mat-error *ngIf="registerForm.get('email').hasError('required')">Email is required</mat-error>
                         <mat-error *ngIf="registerForm.get('email').hasError('email')">Email is invalid</mat-error>
                         <mat-icon matSuffix>email</mat-icon>
@@ -41,7 +42,7 @@
                     <!-- username field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
-                        <input formControlName="username" matInput placeholder="Enter here">
+                        <input formControlName="username" matInput placeholder="Enter here" required>
                         <mat-hint>Username must be unique</mat-hint>
                         <mat-error *ngIf="registerForm.get('username').hasError('required')">Username is required</mat-error>
                         <mat-error *ngIf="registerForm.get('username').hasError('minlength')">Username must be at least 3 characters</mat-error>
@@ -52,7 +53,7 @@
                     <!-- password field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here">
+                        <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
@@ -65,7 +66,7 @@
                     <!-- password field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Confirm Password</mat-label>
-                        <input formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here">
+                        <input formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
@@ -76,7 +77,7 @@
                     <!-- phone number field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Phone Number</mat-label>
-                        <input formControlName="phone" type="number" matInput placeholder="Enter here">
+                        <input formControlName="phone" type="number" matInput placeholder="Enter here" required>
                         <mat-icon matSuffix>phone</mat-icon>
                         <mat-error *ngIf="registerForm.get('phone').hasError('required')">Phone is required</mat-error>
                     </mat-form-field>
