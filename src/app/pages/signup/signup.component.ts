@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 import { UserService } from 'src/app/services/user.service';
 import Validation from 'src/app/utils/validation';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -21,7 +17,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private snackBarService: SnackbarService
   ) {}
 
   ngOnInit(): void {
@@ -42,10 +39,17 @@ export class SignupComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(3),
-            Validators.maxLength(20)
+            Validators.maxLength(20),
           ],
         ],
-        password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(20),
+          ],
+        ],
         confirmPassword: ['', Validators.required],
         phone: ['', Validators.required],
       },
@@ -53,10 +57,6 @@ export class SignupComponent implements OnInit {
         validator: [Validation.match('password', 'confirmPassword')],
       }
     );
-  }
-
-  get rf(): { [key: string]: AbstractControl } {
-    return this.registerForm.controls;
   }
 
   onSubmit() {
@@ -69,15 +69,16 @@ export class SignupComponent implements OnInit {
 
     // createUser
     this.userService.register(this.registerForm.value).subscribe(
-      (data) => {
+      (data:any) => {
         // succes
+        Swal.fire('Success','Successfully saved.', 'success');
+        //this.snackBarService.success(data);
         console.log(data);
-        alert('succes');
       },
       (error) => {
         // error
+        this.snackBarService.error(error);
         console.log(error);
-        alert('error');
       }
     );
   }

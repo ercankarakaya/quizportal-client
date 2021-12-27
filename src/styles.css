@@ -21,3 +21,17 @@ body {
 .half-width {
     width: 50%;
 }
+
+.snackbar-error {
+    background: red !important;
+    color: whitesmoke !important;
+}
+
+.mat-simple-snackbar-action {
+    color: whitesmoke !important;
+}
+
+.snackbar-success {
+    background: green !important;
+    color: whitesmoke !important;
+}
