@@ -1,94 +1,96 @@
 <div class="bootstrap-wrapper">
     <div class="container">
-        <div class="row">
+        <div class="row mt20">
             <div class="col-md-6 offset-md-3">
-                <div class="container text-center">
-                    <img src="../assets/img/signup_logo.png" alt="" class="signup-img" />
-                </div>
-                <h3 class="text-center">Sign Up</h3>
-
-                <!-- {{registerForm.value | json}} -->
-
-                <form [formGroup]='registerForm' (ngSubmit)="onSubmit()">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- first name field -->
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>First Name</mat-label>
-                                <input matInput formControlName="firstName" placeholder="Enter here" required>
-                                <mat-error *ngIf="registerForm.get('firstName').hasError('required')">Firstname is required</mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- last name field -->
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Last Name</mat-label>
-                                <input matInput formControlName="lastName" placeholder="Enter here" required>
-                                <mat-error *ngIf="registerForm.get('lastName').hasError('required')">Lastname is required</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-
-                    <!-- email field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input formControlName="email" type="email" matInput placeholder="Enter here" required>
-                        <mat-hint>Email must be unique</mat-hint>
-                        <mat-error *ngIf="registerForm.get('email').hasError('required')">Email is required</mat-error>
-                        <mat-error *ngIf="registerForm.get('email').hasError('email')">Email is invalid</mat-error>
-                        <mat-icon matSuffix>email</mat-icon>
-                    </mat-form-field>
-
-                    <!-- username field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input formControlName="username" matInput placeholder="Enter here" required>
-                        <mat-hint>Username must be unique</mat-hint>
-                        <mat-error *ngIf="registerForm.get('username').hasError('required')">Username is required</mat-error>
-                        <mat-error *ngIf="registerForm.get('username').hasError('minlength')">Username must be at least 3 characters</mat-error>
-                        <mat-error *ngIf="registerForm.get('username').hasError('maxlength')"> Username must not exceed 20 characters</mat-error>
-                        <mat-icon matSuffix>person_outline</mat-icon>
-                    </mat-form-field>
-
-                    <!-- password field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                        <mat-hint>Min 6 characters</mat-hint>
-                        <mat-error *ngIf="registerForm.get('password').hasError('required')">Password is required</mat-error>
-                        <mat-error *ngIf="registerForm.get('password').hasError('minlength')">Password must be at least 6 characters</mat-error>
-                        <mat-error *ngIf="registerForm.get('password').hasError('maxlength')"> Password must not exceed 20 characters</mat-error>
-                    </mat-form-field>
-
-                    <!-- password field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Confirm Password</mat-label>
-                        <input formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                        <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">Confirm password is required</mat-error>
-                        <mat-error *ngIf="registerForm.get('confirmPassword').hasError('matching')">Password and Confirm Password must be match.</mat-error>
-                    </mat-form-field>
-
-                    <!-- phone number field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Phone Number</mat-label>
-                        <input formControlName="phone" type="number" matInput placeholder="Enter here" required>
-                        <mat-icon matSuffix>phone</mat-icon>
-                        <mat-error *ngIf="registerForm.get('phone').hasError('required')">Phone is required</mat-error>
-                    </mat-form-field>
-
+                <mat-card class="mt20">
                     <div class="container text-center">
-                        <button type="submit" mat-raised-button color="primary" class="btn">Register</button>
-                        <button mat-raised-button color="accent" class="btn" (click)="onReset()">Clear</button>
+                        <img src="../assets/img/signup-logo.png" alt="" class="signup-img" />
                     </div>
 
-                </form>
+                    <h3 class="text-center">SIGN UP</h3>
+                    <!-- {{registerForm.value | json}} -->
 
+                    <form [formGroup]='registerForm' (ngSubmit)="onSubmit()">
+                        <div class="row mt20">
+                            <div class="col-md-6">
+                                <!-- first name field -->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input matInput formControlName="firstName" placeholder="Enter here" required>
+                                    <mat-error *ngIf="registerForm.get('firstName').hasError('required')">Firstname is required</mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- last name field -->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input matInput formControlName="lastName" placeholder="Enter here" required>
+                                    <mat-error *ngIf="registerForm.get('lastName').hasError('required')">Lastname is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!-- email field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" type="email" matInput placeholder="Enter here" required>
+                            <mat-hint>Email must be unique</mat-hint>
+                            <mat-error *ngIf="registerForm.get('email').hasError('required')">Email is required</mat-error>
+                            <mat-error *ngIf="registerForm.get('email').hasError('email')">Email is invalid</mat-error>
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <!-- username field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input formControlName="username" matInput placeholder="Enter here" required>
+                            <mat-hint>Username must be unique</mat-hint>
+                            <mat-error *ngIf="registerForm.get('username').hasError('required')">Username is required</mat-error>
+                            <mat-error *ngIf="registerForm.get('username').hasError('minlength')">Username must be at least 3 characters</mat-error>
+                            <mat-error *ngIf="registerForm.get('username').hasError('maxlength')"> Username must not exceed 20 characters</mat-error>
+                            <mat-icon matSuffix>person_outline</mat-icon>
+                        </mat-form-field>
+
+                        <!-- password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                            <mat-hint>Min 6 characters</mat-hint>
+                            <mat-error *ngIf="registerForm.get('password').hasError('required')">Password is required</mat-error>
+                            <mat-error *ngIf="registerForm.get('password').hasError('minlength')">Password must be at least 6 characters</mat-error>
+                            <mat-error *ngIf="registerForm.get('password').hasError('maxlength')"> Password must not exceed 20 characters</mat-error>
+                        </mat-form-field>
+
+                        <!-- password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter here" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                            <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">Confirm password is required</mat-error>
+                            <mat-error *ngIf="registerForm.get('confirmPassword').hasError('matching')">Password and Confirm Password must be match.</mat-error>
+                        </mat-form-field>
+
+                        <!-- phone number field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input formControlName="phone" type="number" matInput placeholder="Enter here" required>
+                            <mat-icon matSuffix>phone</mat-icon>
+                            <mat-error *ngIf="registerForm.get('phone').hasError('required')">Phone is required</mat-error>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" class="btn ml20">Register</button>
+                            <button mat-raised-button color="accent" class="btn ml20" (click)="onReset()">Clear</button>
+                        </div>
+
+                    </form>
+                </mat-card>
             </div>
         </div>
     </div>
