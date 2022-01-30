@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    background: #f5f5f5;
 }
 
 body {
@@ -54,4 +55,17 @@ body {
 .snackbar-success {
     background: green !important;
     color: whitesmoke !important;
+}
+
+.mat-success {
+    color: #f0fff3;
+    background-color: #1d8a36;
+}
+
+.mat-raised-button.mat-success:hover {
+    background-color: #43ca63;
+}
+
+.mat-raised-button.mat-accent:hover {
+    background-color: rgb(250, 167, 181);
 }

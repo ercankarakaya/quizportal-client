@@ -1,1 +1,20 @@
-<h1 class="testt">This is navbar</h1>
+<mat-toolbar color="success">
+
+    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>school</mat-icon>
+    </a>
+
+    <span>QUIZ PORTAL</span>
+    <span class="spacer"></span>
+
+    <a mat-button [routerLink]="'/login'">
+        Login
+        <mat-icon>login</mat-icon>
+    </a>
+
+    <a mat-button [routerLink]="'/signup'">
+        Register
+        <mat-icon>how_to_reg</mat-icon>
+    </a>
+
+</mat-toolbar>
