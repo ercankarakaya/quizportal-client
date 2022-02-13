@@ -48,12 +48,17 @@ body {
     color: whitesmoke !important;
 }
 
-.mat-simple-snackbar-action {
+.snackbar-success {
+    background: green !important;
     color: whitesmoke !important;
 }
 
-.snackbar-success {
-    background: green !important;
+.snackbar-warn {
+    background: goldenrod !important;
+    color: whitesmoke !important;
+}
+
+.mat-simple-snackbar-action {
     color: whitesmoke !important;
 }
 

@@ -77,7 +77,7 @@ export class SignupComponent implements OnInit {
       },
       (error) => {
         // error
-        this.snackBarService.error(error);
+        this.snackBarService.error(error.message);
         console.log(error);
       }
     );
