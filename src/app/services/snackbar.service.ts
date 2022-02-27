@@ -7,7 +7,13 @@ import { Injectable } from '@angular/core';
 export class SnackbarService {
   constructor(private snackBar: MatSnackBar) {}
 
-  error(message: string,statusText?:string) {
+  error(value) {
+    let message=value;
+    let statusText='';
+    if(value.error!=undefined){
+      message=value.error.message;
+      statusText=value.error.statusText;
+    }
     return this.snackBar.open(message, statusText, {
       duration: 3000,
       horizontalPosition: 'right',
@@ -30,7 +36,7 @@ export class SnackbarService {
       duration: 3000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
-      panelClass: ['snackbar-success'] //['mat-toolbar', 'mat-warn']
+      panelClass: ['snackbar-success'] 
     });
   }
 }

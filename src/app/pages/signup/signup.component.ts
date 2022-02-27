@@ -69,16 +69,16 @@ export class SignupComponent implements OnInit {
 
     // createUser
     this.userService.register(this.registerForm.value).subscribe(
-      (data:any) => {
+      (data: any) => {
         // succes
-        Swal.fire('Success','Successfully saved.', 'success');
+        Swal.fire('Success', 'Successfully saved.', 'success');
         //this.snackBarService.success(data);
-        console.log(data);
+        console.log('response data-> ', data);
       },
       (error) => {
         // error
-        this.snackBarService.error(error.message);
-        console.log(error);
+        this.snackBarService.error(error);
+        console.log('response error-> ', error);
       }
     );
   }
