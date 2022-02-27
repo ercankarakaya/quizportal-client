@@ -8,9 +8,9 @@ export class SnackbarService {
   constructor(private snackBar: MatSnackBar) {}
 
   error(value) {
-    let message=value;
+    let message=value.message;
     let statusText='';
-    if(value.error!=undefined){
+    if(value.error.message!=undefined){
       message=value.error.message;
       statusText=value.error.statusText;
     }

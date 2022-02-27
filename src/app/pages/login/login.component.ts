@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user.model';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +11,14 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  //  loginData = {
-  //    username: '',
-  //   password: '',
-  //  };
 
   user: User = new User();
 
   constructor(
     private snackBarService: SnackbarService,
-    private loginService: LoginService
+    private authService: AuthService,
+    private tokenService: TokenStorageService,
+    private userService:UserService
   ) {}
 
   ngOnInit(): void {}
@@ -43,21 +42,23 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.loginService.generateToken(this.user).subscribe(
+    // login
+    this.authService.signin(this.user).subscribe(
       (data: any) => {
         console.log('response data-> ', data);
-        // login
-        this.loginService.login(data.token);
-        this.loginService.getCurrentUser().subscribe((user: any) => {
-          this.loginService.setUser(user);
-          console.log('response data-> ', user);
-          //redirect ..ADMIN dashboard
-          //redirect ..NORMAL dashboard
-        },
-        (error)=>{
-          this.snackBarService.error(error);
-          console.log('response error-> ', error);
-        });
+        this.tokenService.setToken(data.token);
+        this.authService.getCurrentUser().subscribe(
+          (user: any) => {
+            this.tokenService.setUser(user);
+            console.log('response data-> ', user);
+            //redirect ..ADMIN dashboard
+            //redirect ..NORMAL dashboard
+          },
+          (error) => {
+            this.snackBarService.error(error);
+            console.log('response error-> ', error);
+          }
+        );
       },
       (error) => {
         this.snackBarService.error(error);

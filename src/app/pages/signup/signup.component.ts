@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { UserService } from 'src/app/services/user.service';
 import Validation from 'src/app/utils/validation';
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private userService: UserService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     private snackBarService: SnackbarService
   ) {}
@@ -68,10 +69,10 @@ export class SignupComponent implements OnInit {
     }
 
     // createUser
-    this.userService.register(this.registerForm.value).subscribe(
+    this.authService.signup(this.registerForm.value).subscribe(
       (data: any) => {
         // succes
-        Swal.fire('Success', 'Successfully saved.', 'success');
+        Swal.fire('Success', 'Successfully registered.', 'success');
         //this.snackBarService.success(data);
         console.log('response data-> ', data);
       },
