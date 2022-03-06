@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
           ],
         ],
         confirmPassword: ['', Validators.required],
-        phone: ['', Validators.required],
+        phone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       },
       {
         validator: [Validation.match('password', 'confirmPassword')],
