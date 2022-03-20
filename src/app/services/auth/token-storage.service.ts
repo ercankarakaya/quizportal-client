@@ -19,34 +19,41 @@ export class TokenStorageService {
     return localStorage.getItem(keys.TOKEN_KEY);
   }
 
-    //logout: remove token from localStorage
-    public logout() {
-      localStorage.removeItem(keys.TOKEN_KEY);
-      localStorage.removeItem(keys.USER_KEY);
-      return true;
+  //logout: remove token from localStorage
+  public logout() {
+    localStorage.removeItem(keys.TOKEN_KEY);
+    localStorage.removeItem(keys.USER_KEY);
+    localStorage.removeItem(keys.USERNAME_KEY);
+    return true;
+  }
+
+  //set User to localStorage
+  public setUser(user) {
+    localStorage.setItem(keys.USER_KEY, JSON.stringify(user));
+    localStorage.setItem(keys.USERNAME_KEY, JSON.stringify(user.username));
+  }
+
+  // get User from localStorage
+  public getUser() {
+    let user = localStorage.getItem(keys.USER_KEY);
+    if (user != null) {
+      return JSON.parse(user);
+    } else {
+      this.logout();
+      return null;
     }
-  
-    //set User to localStorage
-    public setUser(user) {
-      localStorage.setItem(keys.USER_KEY, JSON.stringify(user));
-    }
-  
-    // get User from localStorage
-    public getUser() {
-      let user = localStorage.getItem(keys.USER_KEY);
-      if (user != null) {
-        return JSON.parse(user);
-      } else {
-        this.logout();
-        return null;
-      }
-    }
-  
-    // get user role
-    public getUserRole() {
-      let user = this.getUser();
-      return user.authorities[0].authority; //user.roles[0].name;
-    }
+  }
+
+  public getUsername() {
+    let username = localStorage.getItem(keys.USERNAME_KEY);
+    return JSON.parse(username);
+  }
+
+  // get user role
+  public getUserRole() {
+    let user = this.getUser();
+    return user.authorities[0].authority; //user.roles[0].name;
+  }
 
   // isLogin: user is logged in or not
   public isLoggedIn() {
@@ -67,11 +74,9 @@ export class TokenStorageService {
   public getRoles(): string[] {
     this.roles = [];
     if (localStorage.getItem(keys.TOKEN_KEY)) {
-      JSON.parse(localStorage.getItem(keys.AUTHORITIES_KEY)).forEach(
-        (role) => {
-          this.roles.push(role);
-        }
-      );
+      JSON.parse(localStorage.getItem(keys.AUTHORITIES_KEY)).forEach((role) => {
+        this.roles.push(role);
+      });
     }
     return this.roles;
   }

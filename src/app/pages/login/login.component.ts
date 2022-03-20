@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
@@ -11,14 +12,14 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   user: User = new User();
 
   constructor(
     private snackBarService: SnackbarService,
     private authService: AuthService,
     private tokenService: TokenStorageService,
-    private userService:UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -51,8 +52,18 @@ export class LoginComponent implements OnInit {
           (user: any) => {
             this.tokenService.setUser(user);
             console.log('response data-> ', user);
-            //redirect ..ADMIN dashboard
-            //redirect ..NORMAL dashboard
+
+            if (this.tokenService.getUserRole() == 'ADMIN') {
+              // redirect ..ADMIN dashboard
+              // this.router.navigate(['admin']);
+              window.location.href = '/admin';
+            } else if (this.tokenService.getUserRole() == 'USER') {
+              // edirect ..NORMAL dashboard
+              // this.router.navigate(['user-dashboard']);
+              window.location.href = '/user-dashboard';
+            } else {
+              this.tokenService.logout();
+            }
           },
           (error) => {
             this.snackBarService.error(error);

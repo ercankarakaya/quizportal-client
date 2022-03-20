@@ -26,6 +26,4 @@ export class AuthService {
     return this.http.get(`${BASE_API_URL}/auth/current-user`);
   }
 
-  
-
 }

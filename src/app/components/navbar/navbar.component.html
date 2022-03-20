@@ -7,14 +7,24 @@
     <span>QUIZ PORTAL</span>
     <span class="spacer"></span>
 
-    <a mat-button [routerLink]="'/login'">
+    <a *ngIf="isLoggedIn" mat-button>
+        {{username}}
+        <mat-icon>account_circle</mat-icon>
+    </a>
+
+    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/login'">
         Login
         <mat-icon>login</mat-icon>
     </a>
 
-    <a mat-button [routerLink]="'/signup'">
+    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/signup'">
         Register
         <mat-icon>how_to_reg</mat-icon>
+    </a>
+
+    <a *ngIf="isLoggedIn" mat-button (click)="logout()">
+        Logout
+        <mat-icon>logout</mat-icon>
     </a>
 
 </mat-toolbar>
