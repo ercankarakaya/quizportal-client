@@ -74,3 +74,8 @@ body {
 .mat-raised-button.mat-accent:hover {
     background-color: rgb(250, 167, 181);
 }
+
+.btn-active {
+    background-color: rgb(219, 238, 245);
+    color: white;
+}

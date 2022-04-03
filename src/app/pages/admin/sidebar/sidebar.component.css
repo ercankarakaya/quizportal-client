@@ -1,9 +1,19 @@
-.homeBtn mat-icon {
-    width: 20px;
+.btn {
+    width: 25px;
+}
+
+.home mat-icon {
     margin-bottom: 8px;
 }
 
-.profileBtn mat-icon {
-    width: 20px;
+.profile mat-icon {
+    margin-bottom: 4px;
+}
+
+.category mat-icon {
+    margin-bottom: 4px;
+}
+
+.quiz mat-icon {
     margin-bottom: 4px;
 }

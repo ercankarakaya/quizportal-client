@@ -1,15 +1,43 @@
 <mat-card>
     <mat-action-list>
         <div mat-subheader>Menu</div>
-        <button mat-list-item class="homeBtn" routerLink="/admin">
+
+        <button mat-list-item class="btn home" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
             <!-- <img src="../../../../assets/img/home.svg" class="homeBtn-img" /> -->
             <!-- <mat-icon mat-list-icon>home</mat-icon> -->
-            <mat-icon mat-list-icon svgIcon="home-svg"></mat-icon>
+            <mat-icon mat-list-icon svgIcon="home"></mat-icon>
             Home
         </button>
-        <button mat-list-item class="profileBtn" routerLink="/admin/profile">
-            <mat-icon mat-list-icon svgIcon="user-profile-svg"></mat-icon>
+
+        <button mat-list-item class="btn profile" routerLink="/admin/profile" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon svgIcon="user-profile"></mat-icon>
             Profile
         </button>
+
+        <button mat-list-item class="btn category" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon svgIcon="categories"></mat-icon>
+            Categories
+        </button>
+
+        <button mat-list-item class="btn category" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon svgIcon="category-add"></mat-icon>
+            Add Categories
+        </button>
+
+        <button mat-list-item class="btn quiz" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon svgIcon="quiz"></mat-icon>
+            Quizzes
+        </button>
+
+        <button mat-list-item class="btn quiz" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon svgIcon="quiz-add"></mat-icon>
+            Add Quiz
+        </button>
+
+        <button mat-list-item class="btn quiz" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon mat-list-icon>logout</mat-icon>
+            Logout
+        </button>
+
     </mat-action-list>
 </mat-card>

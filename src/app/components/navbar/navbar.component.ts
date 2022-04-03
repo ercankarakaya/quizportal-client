@@ -3,6 +3,8 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, Routes } from '@angular/router';
 import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
+import { svgIconUrls } from 'src/app/utils/helper';
+import { IconUtil } from 'src/app/utils/icon.util';
 
 @Component({
   selector: 'app-navbar',
@@ -16,10 +18,9 @@ export class NavbarComponent implements OnInit {
   constructor(
     private tokenService: TokenStorageService,
     private router: Router,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private iconUtil:IconUtil
   ) {
-    this.svgIcons();
+    this.getSvgIcons();
   }
 
   ngOnInit(): void {
@@ -35,12 +36,7 @@ export class NavbarComponent implements OnInit {
     // or->  window.location.reload();
   }
 
-  public svgIcons() {
-    this.matIconRegistry.addSvgIcon(
-      'logo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../../../../assets/svg/logo4.svg'
-      )
-    );
+ getSvgIcons() {
+    this.iconUtil.addSvgIcons('logo',svgIconUrls.LOGO4);
   }
 }

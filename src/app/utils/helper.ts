@@ -1,6 +1,3 @@
-import { IconOptions } from "@angular/material/icon";
-import { SafeResourceUrl } from "@angular/platform-browser";
-
 export const BASE_API_URL = 'http://localhost:8181/api';
 
 export const keys = {
@@ -14,6 +11,21 @@ export const keys = {
 export const roles = {
   ADMIN: 'ADMIN',
   USER: 'USER',
+};
+
+export const svgIconUrls = {
+  LOGO: 'assets/svg/logo.svg',
+  LOGO2: 'assets/svg/logo2.svg',
+  LOGO3: 'assets/svg/logo3.svg',
+  LOGO4: 'assets/svg/logo4.svg',
+  HOME: 'assets/svg/home.svg',
+  USER_PROFILE: 'assets/svg/user-profile.svg',
+  USER_DEFAULT: 'assets/svg/user-default.svg',
+  CATEGORY: 'assets/svg/category.svg',
+  CATEGORY_ADD: 'assets/svg/category-add.svg',
+  QUIZ:'assets/svg/online-quiz.svg',
+  QUIZ_ADD:'assets/svg/quiz-add.svg',
+  ADD:'assets/svg/add.svg',
 };
 
 export function test() {

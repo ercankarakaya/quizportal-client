@@ -1,33 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from "@angular/platform-browser";
-
+import { svgIconUrls } from 'src/app/utils/helper';
+import { IconUtil } from 'src/app/utils/icon.util';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
+  
+  /** variables */
 
   constructor(
-    private matIconRegistry:MatIconRegistry,
-    private domSanitizer:DomSanitizer) { 
-
-      this.svgIcons();
+    private iconUtils:IconUtil
+  ) {
+    this.getSvgIcons();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  getSvgIcons() {
+    this.iconUtils.addSvgIcons('home',svgIconUrls.HOME);
+    this.iconUtils.addSvgIcons('user-profile',svgIconUrls.USER_PROFILE);
+    this.iconUtils.addSvgIcons('categories',svgIconUrls.CATEGORY);
+    this.iconUtils.addSvgIcons('category-add',svgIconUrls.CATEGORY_ADD);
+    this.iconUtils.addSvgIcons('quiz',svgIconUrls.QUIZ);
+    this.iconUtils.addSvgIcons('quiz-add',svgIconUrls.QUIZ_ADD);
+
   }
-
-  public svgIcons(){
-    this.matIconRegistry.addSvgIcon(
-      "home-svg",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../assets/svg/home.svg"));
-
-      this.matIconRegistry.addSvgIcon(
-        "user-profile-svg",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../assets/svg/user-profile.svg"));
-  }
-
 }
