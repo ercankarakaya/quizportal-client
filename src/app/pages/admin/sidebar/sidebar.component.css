@@ -1,0 +1,9 @@
+.homeBtn mat-icon {
+    width: 20px;
+    margin-bottom: 8px;
+}
+
+.profileBtn mat-icon {
+    width: 20px;
+    margin-bottom: 4px;
+}

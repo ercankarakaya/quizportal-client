@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../model/user.model';
 import { BASE_API_URL, keys } from '../utils/helper';
 
 @Injectable({

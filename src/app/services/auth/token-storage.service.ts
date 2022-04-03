@@ -19,14 +19,6 @@ export class TokenStorageService {
     return localStorage.getItem(keys.TOKEN_KEY);
   }
 
-  //logout: remove token from localStorage
-  public logout() {
-    localStorage.removeItem(keys.TOKEN_KEY);
-    localStorage.removeItem(keys.USER_KEY);
-    localStorage.removeItem(keys.USERNAME_KEY);
-    return true;
-  }
-
   //set User to localStorage
   public setUser(user) {
     localStorage.setItem(keys.USER_KEY, JSON.stringify(user));
@@ -79,5 +71,13 @@ export class TokenStorageService {
       });
     }
     return this.roles;
+  }
+
+  //logout: remove token from localStorage
+  public logout() {
+    localStorage.removeItem(keys.TOKEN_KEY);
+    localStorage.removeItem(keys.USER_KEY);
+    localStorage.removeItem(keys.USERNAME_KEY);
+    return true;
   }
 }

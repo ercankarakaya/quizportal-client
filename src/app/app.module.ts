@@ -21,6 +21,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { authInterceptorProviders } from './services/auth/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import {MatListModule} from '@angular/material/list';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent
   ],
 
   // modules are added here.
@@ -50,7 +57,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     ReactiveFormsModule,
     MatSnackBarModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

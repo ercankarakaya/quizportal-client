@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user.model';
+import { LoginRequest } from 'src/app/model/login-request';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { UserService } from 'src/app/services/user.service';
+import { roles } from 'src/app/utils/helper';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  user: User = new User();
+  loginForm: FormGroup;
+  loginRequest: LoginRequest = new LoginRequest();
 
   constructor(
     private snackBarService: SnackbarService,
@@ -22,7 +25,12 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+    });
+  }
 
   formSubmit(event) {
     if (event.submitter.name == 'login') {
@@ -34,17 +42,11 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('login button clicked.');
-    if (this.user.username.trim() == '' || this.user.username == null) {
-      this.snackBarService.error('Username is required!');
-      return;
-    }
-    if (this.user.password.trim() == '' || this.user.password == null) {
-      this.snackBarService.error('Password is required!');
-      return;
-    }
+    this.loginRequest.username=this.loginForm.get('username').value;
+    this.loginRequest.password=this.loginForm.get('password').value;
 
     // login
-    this.authService.signin(this.user).subscribe(
+    this.authService.signin(this.loginRequest).subscribe(
       (data: any) => {
         console.log('response data-> ', data);
         this.tokenService.setToken(data.token);
@@ -53,11 +55,11 @@ export class LoginComponent implements OnInit {
             this.tokenService.setUser(user);
             console.log('response data-> ', user);
 
-            if (this.tokenService.getUserRole() == 'ADMIN') {
+            if (this.tokenService.getUserRole() == roles.ADMIN) {
               // redirect ..ADMIN dashboard
               // this.router.navigate(['admin']);
               window.location.href = '/admin';
-            } else if (this.tokenService.getUserRole() == 'USER') {
+            } else if (this.tokenService.getUserRole() == roles.USER) {
               // edirect ..NORMAL dashboard
               // this.router.navigate(['user-dashboard']);
               window.location.href = '/user-dashboard';
@@ -80,7 +82,7 @@ export class LoginComponent implements OnInit {
 
   reset() {
     console.log('clear button clicked.');
-    this.user = new User();
+    this.loginRequest = new LoginRequest();
   }
 
   reloadPage(): void {

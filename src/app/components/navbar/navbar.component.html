@@ -1,28 +1,31 @@
 <mat-toolbar color="success">
 
-    <a routerLink="/" mat-icon-button>
-        <mat-icon>school</mat-icon>
+    <!-- mat-icon-button-->
+    <a mat-button routerLink="/" class="logoBtn">
+        <mat-icon svgIcon="logo"></mat-icon>
+        <!-- <mat-icon>school</mat-icon> -->
+        QUIZ PORTAL
     </a>
 
-    <span>QUIZ PORTAL</span>
+    <!-- <span>QUIZ PORTAL</span> -->
     <span class="spacer"></span>
 
-    <a *ngIf="isLoggedIn" mat-button>
+    <a mat-button *ngIf="isLoggedIn" routerLink="/admin/profile">
         {{username}}
         <mat-icon>account_circle</mat-icon>
     </a>
 
-    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/login'">
+    <a mat-button *ngIf="!isLoggedIn" [routerLink]="'/login'">
         Login
         <mat-icon>login</mat-icon>
     </a>
 
-    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/signup'">
+    <a mat-button *ngIf="!isLoggedIn" [routerLink]="'/signup'">
         Register
         <mat-icon>how_to_reg</mat-icon>
     </a>
 
-    <a *ngIf="isLoggedIn" mat-button (click)="logout()">
+    <a mat-button *ngIf="isLoggedIn" (click)="logout()">
         Logout
         <mat-icon>logout</mat-icon>
     </a>

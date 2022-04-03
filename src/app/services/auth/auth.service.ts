@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../../model/user.model';
+import { LoginRequest } from 'src/app/model/login-request';
 import { BASE_API_URL, keys } from '../../utils/helper';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class AuthService {
 
 
   // login and generate token
-  public signin(user: User) {
+  public signin(user: LoginRequest) {
     return this.http.post(`${BASE_API_URL}/auth/signin`, user);
   }
 
