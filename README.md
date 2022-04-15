@@ -1,4 +1,4 @@
-# QuizportalClient
+# QuizPortalClient
 
 This is a quiz application.
 
