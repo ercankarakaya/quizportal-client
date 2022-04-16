@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
               // this.router.navigate(['admin']);
               window.location.href = '/admin';
             } else if (this.tokenService.getUserRole() == roles.USER) {
-              // edirect ..NORMAL dashboard
+              // redirect ..NORMAL dashboard
               // this.router.navigate(['user-dashboard']);
               window.location.href = '/user-dashboard';
             } else {

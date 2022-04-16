@@ -15,21 +15,25 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
+    data:{title:'Home'}
   },
   {
     path: 'signup',
     component: SignupComponent,
     pathMatch: 'full',
+    data:{title:'Signup'}
   },
   {
     path: 'login',
     component: LoginComponent,
     pathMatch: 'full',
+    data:{title:'Login'}
   },
   {
     path: 'admin',
     component: DashboardComponent,
     // pathMatch: 'full',
+    data:{title:'Admin Dashboard'},
     canActivate:[AdminGuard],
     children:[
       {
@@ -46,6 +50,7 @@ const routes: Routes = [
     path: 'user-dashboard',
     component: UserDashboardComponent,
     pathMatch: 'full',
+    data:{title:'User Dashboard'},
     canActivate:[UserGuard],
   },
 ];
