@@ -1,19 +1,12 @@
 .btn {
     width: 25px;
+    margin-bottom: 4px;
+}
+
+.btn mat-icon {
+    margin-bottom: 4px;
 }
 
 .home mat-icon {
     margin-bottom: 8px;
-}
-
-.profile mat-icon {
-    margin-bottom: 4px;
-}
-
-.category mat-icon {
-    margin-bottom: 4px;
-}
-
-.quiz mat-icon {
-    margin-bottom: 4px;
 }

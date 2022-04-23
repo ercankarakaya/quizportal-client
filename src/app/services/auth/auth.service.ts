@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequest } from 'src/app/model/login-request';
+import { LoginRequest } from 'src/app/models/login-request';
 import { BASE_API_URL, keys } from '../../utils/helper';
 
 @Injectable({

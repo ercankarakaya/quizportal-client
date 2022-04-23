@@ -6,6 +6,7 @@ export const keys = {
   USERNAME_KEY: 'auth-username',
   TOKEN_HEADER_KEY: 'Authorization',
   AUTHORITIES_KEY: 'auth-authorities',
+  THEME:'theme'
 };
 
 export const roles = {

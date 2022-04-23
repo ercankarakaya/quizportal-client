@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
 import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
 import { ThemeService } from 'src/app/services/theme.service';
-import { svgIconUrls } from 'src/app/utils/helper';
+import { keys, svgIconUrls } from 'src/app/utils/helper';
 import { IconUtil } from 'src/app/utils/icon.util';
 
 @Component({
@@ -14,12 +14,11 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
 
-
   constructor(
     private tokenService: TokenStorageService,
     private router: Router,
-    private iconUtil:IconUtil,
-    private themeService:ThemeService
+    private iconUtil: IconUtil,
+    private themeService: ThemeService
   ) {
     this.getSvgIcons();
   }
@@ -27,6 +26,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = this.tokenService.isLoggedIn();
     this.username = this.tokenService.getUsername();
+    this.themeService.theme=localStorage.getItem(keys.THEME);
   }
 
   logout() {
@@ -37,8 +37,8 @@ export class NavbarComponent implements OnInit {
     // or->  window.location.reload();
   }
 
- getSvgIcons() {
-    this.iconUtil.addSvgIcons('logo',svgIconUrls.LOGO4);
+  getSvgIcons() {
+    this.iconUtil.addSvgIcons('logo', svgIconUrls.LOGO4);
   }
 
   get toggleTheme() {
@@ -47,7 +47,8 @@ export class NavbarComponent implements OnInit {
 
   set toggleTheme(enabled: boolean) {
     this.themeService.theme = enabled ? 'dark' : 'light';
-    console.log(this.themeService.theme)
+    localStorage.removeItem(keys.THEME);
+    localStorage.setItem(keys.THEME, this.themeService.theme);
+    console.log(this.themeService.theme);
   }
-  
 }

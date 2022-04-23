@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginRequest } from 'src/app/model/login-request';
+import { LoginRequest } from 'src/app/models/login-request';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
