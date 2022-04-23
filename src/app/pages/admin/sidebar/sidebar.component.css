@@ -10,3 +10,8 @@
 .home mat-icon {
     margin-bottom: 8px;
 }
+
+mat-card {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}

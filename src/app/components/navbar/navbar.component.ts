@@ -13,6 +13,7 @@ import { IconUtil } from 'src/app/utils/icon.util';
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
+  isToggleChecked=true;
 
   constructor(
     private tokenService: TokenStorageService,
@@ -42,11 +43,11 @@ export class NavbarComponent implements OnInit {
   }
 
   get toggleTheme() {
-    return this.themeService.theme === 'dark';
+    return this.themeService.theme === 'light';
   }
 
   set toggleTheme(enabled: boolean) {
-    this.themeService.theme = enabled ? 'dark' : 'light';
+    this.themeService.theme = enabled ? 'light' : 'dark';
     localStorage.removeItem(keys.THEME);
     localStorage.setItem(keys.THEME, this.themeService.theme);
     console.log(this.themeService.theme);
