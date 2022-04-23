@@ -3,7 +3,9 @@
 html,
 body {
     height: 100%;
-    background: #f5f5f5;
+    background: var(--theme-background);
+    color: var(--theme-color);
+    transition: all ease-in-out 600ms;
 }
 
 body {
@@ -43,6 +45,10 @@ body {
     margin-bottom: 20px !important;
 }
 
+.mr5 {
+    margin-right: 5px !important;
+}
+
 .snackbar-error {
     background: red !important;
     color: whitesmoke !important;
@@ -78,4 +84,14 @@ body {
 .btn-active {
     background-color: rgb(219, 238, 245);
     color: white;
+}
+
+:root[theme=dark] {
+    --theme-background: #303030;
+    --theme-color: rgba(255, 255, 255, .75);
+}
+
+ :root[theme=light] {
+    --theme-background: white;
+    --theme-color: black;
 }
