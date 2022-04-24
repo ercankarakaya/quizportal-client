@@ -27,6 +27,8 @@ import {MatListModule} from '@angular/material/list';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatMenuModule} from '@angular/material/menu';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {MatMenuModule} from '@angular/material/menu';
     UserDashboardComponent,
     ProfileComponent,
     SidebarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoryComponent
   ],
 
   // modules are added here.

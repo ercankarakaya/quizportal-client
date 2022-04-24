@@ -9,7 +9,7 @@
 
                     <h3 class="text-center">LOGIN</h3>
 
-                    <form [formGroup]="loginForm" (ngSubmit)="formSubmit($event)">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
                         <!-- username field -->
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Username</mat-label>
@@ -24,8 +24,14 @@
                         </mat-form-field>
 
                         <div class="container text-center">
-                            <button mat-raised-button name="login" class="btn ml20 mat-success">Login</button>
-                            <button mat-raised-button name="clear" color="accent" class="btn ml20">Clear</button>
+                            <button mat-raised-button class="btn ml20" color="primary" type="submit">
+                                <mat-icon>login</mat-icon>
+                                Login
+                            </button>
+                            <button mat-raised-button color="accent" class="btn ml20" type="button" (click)="reset()">
+                                <mat-icon>rotate_left</mat-icon>
+                                Clear
+                            </button>
                         </div>
 
                     </form>

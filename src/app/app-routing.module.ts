@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -15,43 +17,51 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
-    data:{title:'Home'}
+    data: { title: 'Home' },
   },
   {
     path: 'signup',
     component: SignupComponent,
     pathMatch: 'full',
-    data:{title:'Signup'}
+    data: { title: 'Signup' },
   },
   {
     path: 'login',
     component: LoginComponent,
     pathMatch: 'full',
-    data:{title:'Login'}
+    data: { title: 'Login' },
   },
   {
     path: 'admin',
     component: DashboardComponent,
     // pathMatch: 'full',
-    data:{title:'Admin Dashboard'},
-    canActivate:[AdminGuard],
-    children:[
+    data: { title: 'Admin Dashboard' },
+    canActivate: [AdminGuard],
+    children: [
       {
-        path:'',
-        component:WelcomeComponent,
+        path: '',
+        component: WelcomeComponent,
       },
       {
-        path:'profile',
-        component:ProfileComponent,
+        path: 'profile',
+        component: ProfileComponent,
       },
-    ]
+      {
+        path: 'categories',
+        component: ViewCategoriesComponent,
+      },
+      {
+        path: 'add-category',
+        component: AddCategoryComponent,
+      },
+    ],
   },
   {
     path: 'user-dashboard',
     component: UserDashboardComponent,
     pathMatch: 'full',
-    data:{title:'User Dashboard'},
-    canActivate:[UserGuard],
+    data: { title: 'User Dashboard' },
+    canActivate: [UserGuard],
   },
 ];
 

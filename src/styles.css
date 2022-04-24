@@ -29,12 +29,20 @@ body {
     width: 40%;
 }
 
+.w100 {
+    width: 100px;
+}
+
 .ml20 {
     margin-left: 20px !important;
 }
 
 .mr20 {
     margin-right: 20px !important;
+}
+
+.mt15 {
+    margin-top: 15px !important;
 }
 
 .mt20 {

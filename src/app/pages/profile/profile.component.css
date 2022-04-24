@@ -14,3 +14,9 @@ tr td {
     padding: 15px 10px;
     border: 1px solid #e2e2e2;
 }
+
+mat-card-title {
+    color: rgb(163, 82, 238);
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}

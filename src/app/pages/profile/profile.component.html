@@ -1,5 +1,5 @@
 <mat-card *ngIf="user">
-    <h2 style="color: blueviolet; font-family: 'Times New Roman', Times, serif;">Profile</h2>
+    <mat-card-title>Your Profile</mat-card-title>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
@@ -52,7 +52,13 @@
         </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-        <button mat-raised-button class="mat-success">Update</button>
-        <button mat-raised-button color="accent">Share</button>
+        <button mat-raised-button color="primary">
+            <mat-icon>edit</mat-icon>
+            Update
+        </button>
+        <button mat-raised-button color="accent">
+            <mat-icon>share</mat-icon>
+            Share
+        </button>
     </mat-card-actions>
 </mat-card>

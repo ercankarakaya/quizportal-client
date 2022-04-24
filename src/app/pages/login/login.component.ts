@@ -32,14 +32,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  formSubmit(event) {
-    if (event.submitter.name == 'login') {
-      this.login();
-    } else if ((event.submitter.name = 'clear')) {
-      this.reset();
-    }
-  }
-
   login() {
     console.log('login button clicked.');
     this.loginRequest.username=this.loginForm.get('username').value;
@@ -47,9 +39,9 @@ export class LoginComponent implements OnInit {
 
     // login
     this.authService.signin(this.loginRequest).subscribe(
-      (data: any) => {
-        console.log('response data-> ', data);
-        this.tokenService.setToken(data.token);
+      (reponse: any) => {
+        console.log('response data-> ', reponse);
+        this.tokenService.setToken(reponse.token);
         this.authService.getCurrentUser().subscribe(
           (user: any) => {
             this.tokenService.setUser(user);
@@ -82,7 +74,7 @@ export class LoginComponent implements OnInit {
 
   reset() {
     console.log('clear button clicked.');
-    this.loginRequest = new LoginRequest();
+    this.loginForm.reset();
   }
 
   reloadPage(): void {
