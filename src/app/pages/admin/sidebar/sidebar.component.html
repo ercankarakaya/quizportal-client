@@ -34,7 +34,7 @@
             Add Quiz
         </button>
 
-        <button mat-list-item class="btn" routerLink="/admin" routerLinkActive="btn-active" [routerLinkActiveOptions]="{ exact: true }">
+        <button mat-list-item class="btn" (click)="logout()">
             <mat-icon mat-list-icon>logout</mat-icon>
             Logout
         </button>

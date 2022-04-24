@@ -1,0 +1,6 @@
+.bootstrap-wrapper {
+    background-image: url('../../../assets/img/bg.jpeg');
+    /* background-image: linear-gradient(to bottom, rgba(248, 131, 131, 0.7) 0%, rgba(247, 245, 149, 0.7) 100%), url('../../../assets/img/bg.jpeg'); */
+    background-size: cover;
+    height: 100%;
+}

@@ -6,7 +6,8 @@ export const keys = {
   USERNAME_KEY: 'auth-username',
   TOKEN_HEADER_KEY: 'Authorization',
   AUTHORITIES_KEY: 'auth-authorities',
-  THEME:'theme'
+  THEME_KEY: 'theme',
+  IS_LOGGED_IN_KEY: 'is-logged-in',
 };
 
 export const roles = {
@@ -24,9 +25,9 @@ export const svgIconUrls = {
   USER_DEFAULT: 'assets/svg/user-default.svg',
   CATEGORY: 'assets/svg/category.svg',
   CATEGORY_ADD: 'assets/svg/category-add.svg',
-  QUIZ:'assets/svg/online-quiz.svg',
-  QUIZ_ADD:'assets/svg/quiz-add.svg',
-  ADD:'assets/svg/add.svg',
+  QUIZ: 'assets/svg/online-quiz.svg',
+  QUIZ_ADD: 'assets/svg/quiz-add.svg',
+  ADD: 'assets/svg/add.svg',
 };
 
 export function test() {

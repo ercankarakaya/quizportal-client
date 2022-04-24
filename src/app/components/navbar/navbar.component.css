@@ -5,6 +5,11 @@
 .logoBtn {
     font-size: 20px;
     font-family: 'Times New Roman', serif;
+    /* for logo text gradient*/
+    background: #CF1717;
+    background: linear-gradient(to bottom, #CF1717 0%, #F0F711 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .logoBtn mat-icon {

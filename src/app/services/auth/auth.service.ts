@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { timeout } from 'rxjs';
 import { LoginRequest } from 'src/app/models/login-request';
 import { BASE_API_URL, keys } from '../../utils/helper';
 
@@ -13,7 +14,7 @@ export class AuthService {
 
   // login and generate token
   public signin(user: LoginRequest) {
-    return this.http.post(`${BASE_API_URL}/auth/signin`, user);
+    return this.http.post(`${BASE_API_URL}/auth/signin`, user).pipe(timeout(1000));
   }
 
    // register user

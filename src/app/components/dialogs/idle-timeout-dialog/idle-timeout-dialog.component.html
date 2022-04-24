@@ -1,0 +1,16 @@
+<div align="center">
+    <h1 mat-dialog-title>You Have Been Idle!</h1>
+    <mat-dialog-content>
+        You will time out <span class="countSecond">{{countIdleSecond}}</span> in seconds!
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button (click)="logout()" class="mat-danger">
+            <mat-icon>logout</mat-icon>
+            Logout
+        </button>
+        <button mat-button mat-dialog-close class="mat-success">
+            <mat-icon>thumb_up</mat-icon>
+            Stay
+        </button>
+    </mat-dialog-actions>
+</div>

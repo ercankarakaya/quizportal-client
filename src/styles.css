@@ -13,6 +13,16 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+:root[theme=dark] {
+    --theme-background: #303030;
+    --theme-color: rgba(255, 255, 255, .75);
+}
+
+ :root[theme=light] {
+    --theme-background: white;
+    --theme-color: black;
+}
+
 .text-center {
     text-align: center;
 }
@@ -81,6 +91,11 @@ body {
     background-color: #1d8a36;
 }
 
+.mat-danger {
+    color: #f0fff3;
+    background-color: red;
+}
+
 .mat-raised-button.mat-success:hover {
     background-color: #43ca63;
 }
@@ -92,14 +107,4 @@ body {
 .btn-active {
     background-color: rgb(219, 238, 245);
     color: white;
-}
-
-:root[theme=dark] {
-    --theme-background: #303030;
-    --theme-color: rgba(255, 255, 255, .75);
-}
-
- :root[theme=light] {
-    --theme-background: white;
-    --theme-color: black;
 }

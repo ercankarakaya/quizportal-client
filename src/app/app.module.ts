@@ -26,9 +26,10 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import {MatListModule} from '@angular/material/list';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatMenuModule} from '@angular/material/menu';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { IdleTimeoutDialogComponent } from './components/dialogs/idle-timeout-dialog/idle-timeout-dialog.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    IdleTimeoutDialogComponent
   ],
 
   // modules are added here.
@@ -65,7 +67,9 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     MatCardModule,
     MatToolbarModule,
     MatListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDialogModule
+    
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

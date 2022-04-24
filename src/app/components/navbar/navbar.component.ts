@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = this.tokenService.isLoggedIn();
     this.username = this.tokenService.getUsername();
-    this.themeService.theme=localStorage.getItem(keys.THEME);
+    this.themeService.theme=localStorage.getItem(keys.THEME_KEY);
   }
 
   logout() {
@@ -48,8 +48,8 @@ export class NavbarComponent implements OnInit {
 
   set toggleTheme(enabled: boolean) {
     this.themeService.theme = enabled ? 'light' : 'dark';
-    localStorage.removeItem(keys.THEME);
-    localStorage.setItem(keys.THEME, this.themeService.theme);
+    localStorage.removeItem(keys.THEME_KEY);
+    localStorage.setItem(keys.THEME_KEY, this.themeService.theme);
     console.log(this.themeService.theme);
   }
 }
