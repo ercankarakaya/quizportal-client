@@ -1,0 +1,50 @@
+.avatar {
+    background-image: url('../../../../assets/svg/online-quiz.svg');
+    background-size: cover;
+}
+
+::ng-deep .mat-badge-content {
+    font-size: 10px;
+    text-rendering: optimizeLegibility !important;
+}
+
+.quizCard {
+    margin: 15px 20px 0 20px;
+    border: 1px solid gray;
+}
+
+@media screen and (min-width: 285px) {
+    .updateBtn {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .marksBtn {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .marksBtn,
+    .attemptBtn {
+        margin-left: -1px;
+    }
+    mat-card {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .updateBtn {
+        margin-left: -1px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .updateBtn,
+    .attemptBtn,
+    .marksBtn {
+        margin-top: 10px;
+    }
+}

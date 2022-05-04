@@ -19,7 +19,7 @@ body {
 }
 
  :root[theme=light] {
-    --theme-background: white;
+    --theme-background: whitesmoke;
     --theme-color: black;
 }
 

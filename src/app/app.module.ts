@@ -30,6 +30,8 @@ import { ViewCategoriesComponent } from './pages/admin/view-categories/view-cate
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { IdleTimeoutDialogComponent } from './components/dialogs/idle-timeout-dialog/idle-timeout-dialog.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { IdleTimeoutDialogComponent } from './components/dialogs/idle-timeout-di
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
-    IdleTimeoutDialogComponent
+    IdleTimeoutDialogComponent,
+    ViewQuizzesComponent
   ],
 
   // modules are added here.
@@ -68,7 +71,8 @@ import { IdleTimeoutDialogComponent } from './components/dialogs/idle-timeout-di
     MatToolbarModule,
     MatListModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule
     
   ],
   providers: [authInterceptorProviders],

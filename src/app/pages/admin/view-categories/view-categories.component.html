@@ -1,16 +1,14 @@
 <mat-card>
-    <div class="row">
-        <div class="col-12 col-md-9">
+    <div style="display: flex;justify-content: space-between;">
+        <div>
             <mat-card-title>All Categories</mat-card-title>
         </div>
-        <div class="col-6 col-md-3">
+        <div>
             <!--Add Category Button-->
-            <div class="container text-center">
-                <button mat-raised-button color="primary" routerLink="/admin/add-category">
+            <button mat-raised-button color="primary" routerLink="/admin/add-category">
                     <mat-icon>add</mat-icon>
                     Add New Category
                 </button>
-            </div>
         </div>
     </div>
 
@@ -18,7 +16,7 @@
     <mat-list>
         <!-- <div mat-subheader>All Categories</div> -->
         <mat-list-item *ngFor="let category of categories">
-            <mat-icon mat-list-icon>category</mat-icon>
+            <mat-icon mat-list-icon svgIcon="categories"></mat-icon>
             <div mat-line>{{category.title}}</div>
             <div mat-line>{{category.description}}</div>
             <mat-divider></mat-divider>
