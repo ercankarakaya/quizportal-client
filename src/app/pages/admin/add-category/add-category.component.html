@@ -9,23 +9,24 @@
                     <form (ngSubmit)="addCategory()">
 
                         <!-- Title Field -->
-                        <mat-form-field class="full-width" appearance="outline">
+                        <mat-form-field class="full-width" appearance="fill">
                             <mat-label>Title</mat-label>
                             <input matInput type="text" name="title" [(ngModel)]="category.title" placeholder="Enter category title" required />
                         </mat-form-field>
 
-                        <!-- Title Field -->
-                        <mat-form-field class="full-width" appearance="outline">
+                        <!-- Description Field -->
+                        <mat-form-field class="full-width" appearance="fill">
                             <mat-label>Description</mat-label>
                             <textarea matInput type="text" name="description" [(ngModel)]="category.description" placeholder="Enter category description" rows="10" required></textarea>
                         </mat-form-field>
 
-                        <div class="container text-center mt15">
-                            <button mat-raised-button class="btn ml20" color="primary" type="submit">
+                        <!-- Buttons -->
+                        <div class="container text-center mt20">
+                            <button mat-raised-button class="btn ml20" color="primary" type="submit" matTooltip="Add Category">
                                 <mat-icon>add</mat-icon>
                                 Add
                             </button>
-                            <button mat-raised-button color="accent" class="btn ml20" (click)="reset()" type="button">
+                            <button mat-raised-button color="accent" class="btn ml20" (click)="reset()" type="button" matTooltip="Celar Form">
                             <mat-icon>rotate_left</mat-icon>
                                 Clear
                             </button>

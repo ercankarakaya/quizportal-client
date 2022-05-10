@@ -32,6 +32,11 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { IdleTimeoutDialogComponent } from './components/dialogs/idle-timeout-dialog/idle-timeout-dialog.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -51,7 +56,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     ViewCategoriesComponent,
     AddCategoryComponent,
     IdleTimeoutDialogComponent,
-    ViewQuizzesComponent
+    ViewQuizzesComponent,
+    AddQuizComponent
   ],
 
   // modules are added here.
@@ -72,8 +78,10 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatListModule,
     MatSlideToggleModule,
     MatDialogModule,
-    MatBadgeModule
-    
+    MatBadgeModule,
+    MatTooltipModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

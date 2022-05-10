@@ -34,7 +34,7 @@
                         <!-- email field -->
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Email</mat-label>
-                            <input formControlName="email" type="email" matInput placeholder="Enter here" required>
+                            <input formControlName="email" type="email" matInput placeholder="email@example.com" required>
                             <mat-hint>Email must be unique</mat-hint>
                             <mat-error *ngIf="registerForm.get('email').hasError('required')">Email is required</mat-error>
                             <mat-error *ngIf="registerForm.get('email').hasError('email')">Email is invalid</mat-error>
