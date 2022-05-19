@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>
+    <mat-icon class="infoIcon">info</mat-icon>
+    {{title}}
+</h1>
+
+<div mat-dialog-content>
+    <p>{{message}}</p>
+</div>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onCancel()" color="danger">
+        <mat-icon>close</mat-icon>
+        NO
+    </button>
+    <button mat-raised-button (click)="onCommand()" color="primary">
+        <mat-icon>done</mat-icon>
+        YES
+    </button>
+</mat-dialog-actions>
+
+<!-- <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button [mat-dialog-close]="false">No</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Yes</button>
+</div> -->

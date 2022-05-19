@@ -36,7 +36,7 @@ import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
-
+import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -57,7 +57,8 @@ import {MatSelectModule} from '@angular/material/select';
     AddCategoryComponent,
     IdleTimeoutDialogComponent,
     ViewQuizzesComponent,
-    AddQuizComponent
+    AddQuizComponent,
+    ConfirmationDialogComponent
   ],
 
   // modules are added here.

@@ -77,7 +77,7 @@ body {
 }
 
 .snackbar-success {
-    background: rgb(100, 231, 100) !important;
+    background: rgb(44, 167, 44) !important;
     color: whitesmoke !important;
 }
 
@@ -112,7 +112,20 @@ body {
     background-color: rgb(173, 159, 250);
 }
 
+.mat-raised-button.mat-warn:hover {
+    background-color: rgb(241, 131, 149);
+}
+
+.mat-raised-button.mat-danger:hover {
+    background-color: rgb(241, 131, 149);
+}
+
 .btn-active {
     background-color: rgb(219, 238, 245);
     color: white;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: end;
 }

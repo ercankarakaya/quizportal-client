@@ -15,3 +15,10 @@
 .logoBtn mat-icon {
     margin-bottom: 8px;
 }
+
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}

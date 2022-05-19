@@ -1,3 +1,8 @@
+.matCardHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
 .avatar {
     background-image: url('../../../../assets/svg/online-quiz.svg');
     background-size: cover;
@@ -13,21 +18,37 @@
     border: 1px solid gray;
 }
 
+.deleteBtn {
+    width: 90px;
+}
+
+.updateBtn {
+    width: 95px;
+}
+
+mat-icon {
+    /* icon size*/
+    /* font-size: 20px; */
+    transform: scale(1);
+}
+
 @media screen and (min-width: 285px) {
-    .updateBtn {
+    .attemptBtn {
         margin-left: 20px;
     }
 }
 
 @media screen and (min-width: 769px) {
     .marksBtn {
-        margin-left: 20px;
+        margin-top: 10px;
+        /* margin-left: 20px; */
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 920px) {
     .marksBtn,
-    .attemptBtn {
+    .updateBtn,
+    .deleteBtn {
         margin-left: -1px;
     }
     mat-card {
@@ -36,7 +57,7 @@
 }
 
 @media screen and (max-width: 280px) {
-    .updateBtn {
+    .attemptBtn {
         margin-left: -1px;
     }
 }
@@ -44,6 +65,7 @@
 @media screen and (max-width: 768px) {
     .updateBtn,
     .attemptBtn,
+    .deleteBtn,
     .marksBtn {
         margin-top: 10px;
     }

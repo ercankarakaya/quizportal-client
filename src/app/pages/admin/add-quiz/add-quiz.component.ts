@@ -36,7 +36,22 @@ export class AddQuizComponent implements OnInit {
     );
   }
 
+  requiredFieldsNullCheck(): boolean {
+    if (
+      !this.quiz.title ||
+      !this.quiz.description ||
+      !this.quiz.category ||
+      !this.quiz.maxMarks ||
+      !this.quiz.numberOfQuestions
+    ) {
+      return false;
+    }
+    return true;
+  }
+
   addQuiz() {
+    if (!this.requiredFieldsNullCheck()) return;
+
     this.quizService.addQuiz(this.quiz).subscribe(
       (data: any) => {
         Swal.fire('Success', 'Quiz has been successfully added.', 'success');

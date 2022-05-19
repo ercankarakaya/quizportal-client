@@ -17,4 +17,9 @@ export class QuizService {
   public getAllQuizzes() {
     return this.http.get(`${BASE_API_URL}/quiz/all`);
   }
+
+  //delete quiz
+  public deleteQuiz(id:number){
+    return this.http.delete(`${BASE_API_URL}/quiz/${id}`,{responseType:'text'});
+  }
 }
