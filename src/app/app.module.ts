@@ -37,6 +37,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { ConfirmationDialogComponent } from './components/dialogs/confirmation-d
     IdleTimeoutDialogComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    UpdateQuizComponent,
+    FilterPipe
   ],
 
   // modules are added here.

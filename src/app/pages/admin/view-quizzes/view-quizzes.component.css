@@ -32,6 +32,11 @@ mat-icon {
     transform: scale(1);
 }
 
+.searchInput {
+    width: 100%;
+    margin-top: 20px;
+}
+
 @media screen and (min-width: 285px) {
     .attemptBtn {
         margin-left: 20px;

@@ -10,7 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class ViewCategoriesComponent implements OnInit {
   categories = [];
-
+  searchText='';
+  
   constructor(
     private categoryService: CategoryService,
     private snackbarService: SnackbarService

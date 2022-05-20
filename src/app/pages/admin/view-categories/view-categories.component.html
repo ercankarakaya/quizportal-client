@@ -12,10 +12,17 @@
         </div>
     </div>
 
+    <!-- Search Category -->
+    <mat-form-field class="searchInput" appearance="outline">
+        <mat-label>Search Category</mat-label>
+        <input matInput type="text" name="searchText" [(ngModel)]="searchText" placeholder="Start searching for a category by anything field">
+        <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+
     <!--Category List-->
     <mat-list>
         <!-- <div mat-subheader>All Categories</div> -->
-        <mat-list-item *ngFor="let category of categories">
+        <mat-list-item *ngFor="let category of categories | filter:searchText">
             <mat-icon mat-list-icon svgIcon="categories"></mat-icon>
             <div mat-line>{{category.title}}</div>
             <div mat-line>{{category.description}}</div>
@@ -23,5 +30,8 @@
         </mat-list-item>
     </mat-list>
 
+    <div *ngIf="(categories | filter:searchText).length <1">
+        Not Found
+    </div>
 
 </mat-card>

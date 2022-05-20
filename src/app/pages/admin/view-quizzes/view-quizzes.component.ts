@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class ViewQuizzesComponent implements OnInit {
   quizzes = [];
+  searchText='';
 
   constructor(
     private quizService: QuizService,
