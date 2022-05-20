@@ -30,4 +30,10 @@ export class QuizService {
   public updateQuiz(quiz: any): Observable<any> {
     return this.http.put(`${BASE_API_URL}/quiz/update`, quiz);
   }
+
+  // get the single quiz
+  public getQuizById(id:number):Observable<any>{
+    return this.http.get(`${BASE_API_URL}/quiz/${id}`);
+  }
+
 }

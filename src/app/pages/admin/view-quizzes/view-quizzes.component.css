@@ -8,14 +8,22 @@
     background-size: cover;
 }
 
+mat-card-content {
+    white-space: pre-wrap;
+}
+
 ::ng-deep .mat-badge-content {
     font-size: 10px;
     text-rendering: optimizeLegibility !important;
 }
 
 .quizCard {
-    margin: 15px 20px 0 20px;
+    margin: 20px 20px 0 20px;
     border: 1px solid gray;
+}
+
+.marksBtn {
+    color: gold;
 }
 
 .deleteBtn {

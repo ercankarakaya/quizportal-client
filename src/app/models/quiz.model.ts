@@ -7,5 +7,10 @@ export class Quiz{
     maxMarks:string='';
     numberOfQuestions:string='';
     enabled:number=1;
-    category:Category;    
+    category:Category;
+
+    constructor(){
+        this.category=new Category();
+    }    
+    
 }

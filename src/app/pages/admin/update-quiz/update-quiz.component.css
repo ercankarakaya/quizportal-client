@@ -1,0 +1,20 @@
+.backButton {
+    position: relative;
+    top: -15px;
+    right: 15px;
+    color: rgb(84, 84, 231);
+}
+
+.backButton:hover {}
+
+.backIcon {
+    font-size: 17px;
+    position: relative;
+    right: 15px;
+}
+
+.backText {
+    position: relative;
+    top: -2px;
+    right: 15px;
+}

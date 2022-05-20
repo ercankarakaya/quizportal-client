@@ -1,1 +1,85 @@
-<p>update-quiz works!</p>
+<mat-card>
+    <a mat-button class="backButton" routerLink="/admin/quizzes">
+        <mat-icon class="backIcon" start>arrow_back</mat-icon>
+        <span class="backText">Back</span>
+    </a>
+    <mat-card-title>Update Quiz</mat-card-title>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+
+                <!-- Form -->
+                <form (ngSubmit)="updateQuiz()">
+
+                    <!-- Title Field -->
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput type="text" name="title" [(ngModel)]="quiz.title" placeholder="Enter quiz title" required />
+                        <mat-error *ngIf="!quiz.title">Title is required</mat-error>
+                    </mat-form-field>
+
+                    <!-- Description Field -->
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput type="text" name="description" [(ngModel)]="quiz.description" rows="5" placeholder="Enter description" required>
+                        </textarea>
+                        <mat-error *ngIf="!quiz.description">Description is required</mat-error>
+                    </mat-form-field>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Max Marks Field-->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Maximum Marks</mat-label>
+                                <input matInput type="text" name="maxMarks" [(ngModel)]="quiz.maxMarks" placeholder="Enter max marks" required />
+                                <mat-error *ngIf="!quiz.maxMarks">Maximum Marks is required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- Number of question to be shown Field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Number of Question</mat-label>
+                                <input matInput type="text" name="numberOfQuestions" [(ngModel)]="quiz.numberOfQuestions" placeholder="Enter number of question" required />
+                                <mat-error *ngIf="!quiz.numberOfQuestions">Number of Question is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Category Field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Category</mat-label>
+                                <mat-select name="category" [(value)]="quiz.category.id" required>
+                                    <mat-option *ngFor="let category of categories" [value]="category.id">
+                                        {{category.title}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!quiz.category">Category is required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- Active(Enabled) Field -->
+                            <mat-checkbox class="full-width mt10" [checked]="quiz.enabled === 1" (change)="quiz.enabled = $event.checked ? 1 : 0">Publish Status</mat-checkbox>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="container text-center mt20">
+                        <button mat-raised-button class="btn ml20" color="primary" type="submit" matTooltip="Update Quiz">
+                            <mat-icon>edit</mat-icon>
+                            Update
+                        </button>
+                        <button mat-raised-button color="accent" class="btn ml20" (click)="reset()" type="button" matTooltip="Celar Form">
+                            <mat-icon>rotate_left</mat-icon>
+                            Clear
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

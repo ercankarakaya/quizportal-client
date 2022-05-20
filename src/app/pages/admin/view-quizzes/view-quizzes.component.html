@@ -21,12 +21,19 @@
 
     <!-- Quiz List -->
     <mat-card class="quizCard" *ngFor="let quiz of quizzes | filter:searchText">
+
         <mat-card-header>
             <div mat-card-avatar class="avatar"></div>
             <mat-card-title>{{quiz.title}}</mat-card-title>
             <mat-card-subtitle>{{quiz.category!=null?quiz.category.title:''}}</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content> {{quiz.description}}</mat-card-content>
+
+        <mat-card-content>
+            {{quiz.description}}
+        </mat-card-content>
+
+        <!-- <mat-divider inset></mat-divider> -->
+
         <mat-card-actions>
             <button mat-raised-button color="primary" matBadge="{{quiz.numberOfQuestions}}" matBadgeHidden="false" matBadgePosition="after" matBadgeColor="accent" matTooltip="View Questions">
                 Questions
@@ -42,7 +49,7 @@
                 <mat-icon>delete</mat-icon>
                 Delete
             </button>
-            <button mat-stroked-button color="accent" class="marksBtn">Max Marks: {{quiz.maxMarks}}</button>
+            <button mat-stroked-button class="marksBtn">Max Marks: {{quiz.maxMarks}}</button>
         </mat-card-actions>
     </mat-card>
 
