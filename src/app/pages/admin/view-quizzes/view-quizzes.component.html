@@ -35,7 +35,7 @@
         <!-- <mat-divider inset></mat-divider> -->
 
         <mat-card-actions>
-            <button mat-raised-button color="primary" matBadge="{{quiz.numberOfQuestions}}" matBadgeHidden="false" matBadgePosition="after" matBadgeColor="accent" matTooltip="View Questions">
+            <button mat-raised-button color="primary" matBadge="{{quiz.numberOfQuestions}}" matBadgeHidden="false" matBadgePosition="after" matBadgeColor="accent" matTooltip="View Questions" [routerLink]="'/admin/view-questions/'+quiz.id+'/'+quiz.title">
                 Questions
             </button>
             <button mat-raised-button color="primary" class="attemptBtn" matTooltip="Attempts">

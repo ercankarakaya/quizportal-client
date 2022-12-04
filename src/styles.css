@@ -43,6 +43,10 @@ body {
     width: 100px;
 }
 
+.ml10 {
+    margin-left: 10px !important;
+}
+
 .ml20 {
     margin-left: 20px !important;
 }

@@ -39,6 +39,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AddQuizComponent,
     ConfirmationDialogComponent,
     UpdateQuizComponent,
-    FilterPipe
+    FilterPipe,
+    ViewQuizQuestionsComponent
   ],
 
   // modules are added here.
