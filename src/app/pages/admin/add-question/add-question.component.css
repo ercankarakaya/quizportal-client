@@ -1,0 +1,31 @@
+/* .form {
+    min-width: 200px;
+    max-width: 500px;
+    width: 100%;
+} */
+
+
+/* 
+mat-card-subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: center;
+} */
+
+.mat-stepper-vertical {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+.buttons-div {
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+}

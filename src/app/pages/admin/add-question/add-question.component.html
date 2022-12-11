@@ -1,0 +1,112 @@
+<mat-card>
+    <mat-card-title>Add Question For {{quizTitle}}</mat-card-title>
+    <mat-card-subtitle class="mt20">Enter the detail of the new question</mat-card-subtitle>
+
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <!-- Step 1 -->
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill out question content</ng-template>
+                <!-- content field -->
+                <mat-form-field class="full-width mt20" appearance="fill">
+                    <mat-label>Question</mat-label>
+                    <textarea matInput rows="8" formControlName="questionContentCtrl" #message maxlength="256" placeholder="Enter question content" required></textarea>
+                    <mat-hint align="start"><strong>You can enter up to 256 characters!</strong></mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field>
+                <div align="end" class="mt10">
+                    <button mat-raised-button matStepperNext>
+                        Next
+                        <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </mat-step>
+
+        <!-- Step 2 -->
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out question options</ng-template>
+                <!-- options -->
+                <div class="row mt20">
+                    <div class="col-md-6">
+                        <!-- option1 -->
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Option 1</mat-label>
+                            <input matInput formControlName="option1" required/>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- option2 -->
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Option 2</mat-label>
+                            <input matInput formControlName="option2" required/>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- option3 -->
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Option 3</mat-label>
+                            <input matInput formControlName="option3" required/>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- option4 -->
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Option 4</mat-label>
+                            <input matInput formControlName="option4" required/>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- answer -->
+                    <div class="col-md-6">
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select formControlName="answer">
+                                <mat-option value="A">Option1</mat-option>
+                                <mat-option value="B">Option2</mat-option>
+                                <mat-option value="C">Option3</mat-option>
+                                <mat-option value="D">Option4</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div align="end">
+                    <button mat-raised-button matStepperPrevious>
+                        <mat-icon>arrow_back</mat-icon>
+                        Back
+                    </button>
+                    <button mat-raised-button matStepperNext>
+                        Next
+                        <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </mat-step>
+
+        <!-- Step 3 -->
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div class="buttons-div">
+                <button mat-raised-button matStepperPrevious>
+                    <mat-icon>arrow_back</mat-icon>
+                    Back
+                </button>
+                <button mat-raised-button color="accent" (click)="stepper.reset()">
+                    <mat-icon>rotate_left</mat-icon>
+                    Reset
+                </button>
+                <button mat-raised-button color="success" (click)="addQuestion()">
+                    <mat-icon>check</mat-icon>
+                    OK
+                </button>
+            </div>
+        </mat-step>
+
+    </mat-stepper>
+
+
+
+</mat-card>

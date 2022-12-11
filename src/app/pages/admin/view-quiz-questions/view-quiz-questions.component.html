@@ -1,4 +1,12 @@
-<h1 class="mt20">Questions of {{quizTitle}}</h1>
+<div class="headerDiv">
+    <h1 class="mt20">Questions of {{quizTitle}}</h1>
+    <!--Add Question Button-->
+    <button mat-raised-button class="addQuestionBtn" color="primary" routerLink="/admin/add-question/{{quizId}}/{{quizTitle}}" matTooltip="Add New Question">
+        <!-- [routerLink]="'/admin/add-question/'+quizId" -->
+            <mat-icon>add</mat-icon>
+            Add New Question
+        </button>
+</div>
 
 <div class="bootstrap-wrapper">
     <div class="row">

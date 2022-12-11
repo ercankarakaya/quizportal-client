@@ -1,0 +1,9 @@
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addQuestionBtn {
+    height: 40px;
+    margin-top: 15px;
+}
