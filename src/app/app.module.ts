@@ -40,6 +40,8 @@ import { ConfirmationDialogComponent } from './components/dialogs/confirmation-d
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
     ConfirmationDialogComponent,
     UpdateQuizComponent,
     FilterPipe,
-    ViewQuizQuestionsComponent
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent
   ],
 
   // modules are added here.
@@ -88,7 +91,8 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
     MatBadgeModule,
     MatTooltipModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
