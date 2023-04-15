@@ -23,5 +23,13 @@ export class UserService {
   public getUserByUsername(username:string):Observable<any> {
     return this.http.get(`${BASE_API_URL}/user/${username}`);
   }
+
+  public getUserProfileImage(userId:any):Observable<any>{
+    return this.http.get(`${BASE_API_URL}/user/image/info/${userId}`,{responseType: 'text'});
+  }
+
+  public uploadUserProfileImage(userId:any,image:any):Observable<any>{
+    return this.http.post(`${BASE_API_URL}/user/image/upload/${userId}`, image);
+  }
  
 }

@@ -5,7 +5,9 @@
             <div class="container">
 
                 <div class="container text-center">
-                    <img src="../../../assets/img/user-default2.png" alt="Default User Photo" class="profile-img">
+                    <img [src]="profileImageSource" alt="User Profile Photo" class="profile-img">
+                    <input type="file" (change)="onImageUpload($event)">
+                    <input type="button" (click)="imageUploadAction()" value="Upload Image" class="btn1">
                     <h1 class="mt20">{{user.fullName}}</h1>
                 </div>
 
